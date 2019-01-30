@@ -15,9 +15,20 @@
             margin-top: 50px;
             text-align: center;
         }
+        .table_parents {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        #grandParents {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
     </style>
   </head>
   <body>
+        {{ csrf_field() }}
         <div class="container-fluid" id="container">
             <div class="alert alert-primary" role="alert">
                 Desafio dos Parentes
@@ -31,12 +42,22 @@
                         @endforeach
                     </select>
                 </div>
+                <div class="col-md-3 table_parents">
+                    <table class="table table-sm table-striped table-bordered table-hover" id="table_parents" style="display:none">
+                        <thead>
+                            <th>Filhos</th>
+                            <th>Ação</th>
+                        </thead>
+                        <tbody id="tab-parents"></tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
-    <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/grand-parents.js') }}"></script>
+
   </body>
 </html>
 

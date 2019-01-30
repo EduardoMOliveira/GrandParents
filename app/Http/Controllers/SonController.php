@@ -27,8 +27,8 @@ class SonController extends Controller
         }
     }
 
-    public function index($grand_parents_id)
+    public function getSonsAjax($grand_parents_id)
     {
-        return response($this->getSons($grand_parents_id),200);
+        echo json_encode($this->getSons($grand_parents_id));
     }
 }
