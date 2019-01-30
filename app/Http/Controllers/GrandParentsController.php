@@ -44,4 +44,5 @@ class GrandParentsController extends Controller
         
         return view('parents.grand-parents', compact('data'));
     }
+   
 }
