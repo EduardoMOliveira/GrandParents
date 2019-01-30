@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class GrandParents extends Model
 {
+
+    protected $table = 'grand_parents';
+
 	protected $fillable = ['name'];
 
-	protected $table = 'grand_parents';
+    public function sons()
+    {
+        return $this->hasMany(Son::class);
+    }
 
 }
