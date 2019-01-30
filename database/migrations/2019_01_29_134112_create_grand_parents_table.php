@@ -15,8 +15,8 @@ class CreateGrandParentsTable extends Migration
     {
         Schema::create('grand_parents', function (Blueprint $table) {
 	    $table->increments('id');
-	    $table->string('name');
-            $table->timestamps();
+	    $table->string('name')->unique()->nullable();
+        $table->timestamps();
         });
     }
 
