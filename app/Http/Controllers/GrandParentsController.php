@@ -38,8 +38,6 @@ class GrandParentsController extends Controller
 
     public function index()
     {
-        //$this->grandParents = \App\Models\GrandParents::all();
-        
         $data = $this->getGrandParents();
         
         return view('parents.grand-parents', compact('data'));

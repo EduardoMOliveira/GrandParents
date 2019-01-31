@@ -4,22 +4,21 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateGrandParentsTable extends Migration
+class CreateSonParentsTable extends Migration
 {
-   
+    
     public function up()
     {
-        Schema::create('grand_parents', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('son_parents', function (Blueprint $table) {
+            $table->integer('id');
             $table->string('name')->unique()->nullable();
+            $table->integer('age')->nullable();
             $table->timestamps();
         });
     }
-    
+   
     public function down()
     {
-        Schema::enableForeignKeyConstraints();
-        Schema::dropIfExists('grand_parents');
-        Schema::disableForeignKeyConstraints();
+        Schema::dropIfExists('son_parents');
     }
 }

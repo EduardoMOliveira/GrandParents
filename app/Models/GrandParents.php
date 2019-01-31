@@ -11,9 +11,9 @@ class GrandParents extends Model
 
 	protected $fillable = ['name'];
 
-    public function sons()
+    public function parents()
     {
-        return $this->hasMany(Son::class);
+        return $this->hasMany(Parents::class);
     }
 
 }

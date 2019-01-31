@@ -51,6 +51,15 @@
                         <tbody id="tab-parents"></tbody>
                     </table>
                 </div>
+                <div class="col-md-3 table_parents">
+                    <table class="table table-sm table-striped table-bordered table-hover" id="table_son" style="">
+                        <thead>
+                            <th>Filho</th>
+                            <th>Idade</th>
+                        </thead>
+                        <tbody id="tab-son"></tbody>
+                    </table>
+                </div>
             </div>
         </div>
 

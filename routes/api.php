@@ -6,4 +6,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/sons/{grand_parents_id?}', 'SonController@getSonsAjax')->name('sons');
+Route::post('/sons/{grand_parents_id?}', 'ParentController@getSonsAjax')->name('sons');
