@@ -12,15 +12,15 @@ $(function() {
             success: function (result) {
 
                 $("#tab-parents tr").remove();
-                
+
                 if(result) {
-                    
+
                     HTML = new Array();
 
                     $.each(result[0].sons, function(k,p) {
                         HTML.push('<tr>');
                         HTML.push('<td>'+ p.name + '</td>');
-                        HTML.push('<td><input type="checkbox" name="parents[]" class="ck_parents" value=' + p.id + '></td>');
+                        HTML.push('<td><input type="checkbox" name="parents[]" id="parents_' + p.id + '" class="ck_parents" value=' + p.id + '></td>');
                         HTML.push('</tr>');
                     });
 
@@ -31,54 +31,68 @@ $(function() {
         });
     }
 
-    ck = [];
-    n = 0;
+    function getSon(data) {
 
+        console.log(data);
+
+    }
+    function cbListAll() {
+        return $(".ck_parents").toArray().map(function (check) {
+            return $(check).val();
+        });
+    }
+
+    function chkListChecked() {
+        return $(".ck_parents:checked").toArray().map(function (check) {
+            return $(check).val();
+        });
+
+    }
+
+    function cbCheckedNew(status) {
+        $("#novo").prop("checked", status);
+    }
+
+    function cbCheckedClick() {
+        $("#novo").change(function () {
+            cbCheckedNew(false);
+            var chklistaAll = cbListAll();
+            $.each(chklistaAll, function(k, v) {
+                $("#parents_" + chklistaAll[k]).prop("checked", false);
+                $("#parents_" + chklistaAll[k]).prop("disabled", false);
+            });
+        });
+    }
+
+    function cbHide(lista, status) {
+        $("#parents_" + lista).attr("disabled", status);
+    }
     $(document).ready(function() {
-        
+        cbCheckedClick();
         $("#grandParents").change(function(){
-            
             var grand_parents = $(this).val();
-            
-            if(grand_parents != '') {
-                
-                getParents(grand_parents);
-                
-            } else {
 
+            if(grand_parents != '') {
+                getParents(grand_parents);
+            } else {
                 $("#table_parents").hide();
             }
-            
         });
 
-        $(".ck_parents").change(function(){
-            console.log($(this).val());
-            
-        });
-
-        $(document).on('click','.ck_parents', function(e) {
-            
-            ck[n++] = e.currentTarget.value;        
-            
-            if(ck.length == 2) {
-                
-                $.each($(".ck_parents"), function(k,v) {
-                    
-                    
-                    if (v.checked != true) {
-                        
-                        console.log(k);
-
-                        //$(".ck_parents").attr('disabled', 'true');
-
-                        //console.log('checkado'); 
-                        // CheckBox Marcado... Faça alguma coisa...
-            
+        $(document).on('click','.ck_parents', function() {
+            var chklista = chkListChecked();
+            if (chklista.length == 2) {
+                var chklistaAll = cbListAll();
+                $.each(chklistaAll, function(k, v) {
+                    if (chklistaAll[k] == chklista[k]) {
+                        cbHide(chklistaAll[k], "false");
+                        cbCheckedNew(false);
+                    } else {
+                        cbHide(chklistaAll[k], "true");
+                        cbCheckedNew(true);
+                        getSon(chklista);
                     }
-                    //console.log(k, v);
-                    
                 });
-
             }
         });
     })

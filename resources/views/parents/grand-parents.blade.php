@@ -46,7 +46,7 @@
                     <table class="table table-sm table-striped table-bordered table-hover" id="table_parents" style="display:none">
                         <thead>
                             <th>Filhos</th>
-                            <th>Ação</th>
+                            <th>Ação <input type="checkbox" name="novo" id="novo"/></th>
                         </thead>
                         <tbody id="tab-parents"></tbody>
                     </table>
