@@ -12,6 +12,6 @@ class DatabaseSeeder extends Seeder
         $this->call(GrandParentsTableSeeder::class);
         $this->call(ParentsTableSeeder::class);
         $this->call(SonParentsTableSeeder::class);
-        $this->call(RelationshipParentSonsTableSeeder::class);
+        $this->call(RelationshipParentSonParentsTableSeeder::class);
     }
 }

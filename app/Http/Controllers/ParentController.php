@@ -14,11 +14,11 @@ class ParentController extends Controller
         $this->parents = $parents = GrandParent::with('parents')->get();
     }
 
-    protected function getParents($grand_parent_id)
+    protected function getParents($grandparent_id)
     {
-        if ($grand_parent_id) {
+        if ($grandparent_id) {
 
-            return $this->parents = $parents = GrandParent::with('parents')->where('id', $grand_parent_id)->get();
+            return $this->parents = $parents = GrandParent::with('parents')->where('id', $grandparent_id)->get();
 
         } else {
 
@@ -26,8 +26,8 @@ class ParentController extends Controller
         }
     }
 
-    public function getParentsAjax($grand_parent_id)
+    public function getParentsAjax($grandparent_id)
     {
-        echo json_encode($this->getParents($grand_parent_id));
+        echo json_encode($this->getParents($grandparent_id));
     }
 }
