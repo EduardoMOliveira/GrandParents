@@ -20,6 +20,8 @@ class CreateParentsTable extends Migration
 
     public function down()
     {
+        Schema::enableForeignKeyConstraints();
         Schema::dropIfExists('parents');
+        Schema::disableForeignKeyConstraints();
     }
 }
