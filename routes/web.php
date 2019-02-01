@@ -6,4 +6,5 @@ Route::get('/', function () {
 });
 
 
-Route::get('/grand-parents', 'GrandParentsController@index')->name('grand-parents');
+Route::get('/grandparent', 'GrandParentController@index')->name('grandparent');
+

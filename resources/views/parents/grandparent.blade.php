@@ -56,7 +56,7 @@
 
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/grand-parents.js') }}"></script>
+    <script src="{{ asset('js/grandparents.js') }}"></script>
 
   </body>
 </html>
