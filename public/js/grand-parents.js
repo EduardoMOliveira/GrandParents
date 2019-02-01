@@ -6,7 +6,7 @@ $(function() {
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
             },
-            url:'api/sons/' + grand_parents,
+            url:'api/parents/' + grand_parents,
             type: 'post',
             dataType: 'json',
             success: function (result) {
@@ -17,7 +17,7 @@ $(function() {
 
                     HTML = new Array();
 
-                    $.each(result[0].sons, function(k,p) {
+                    $.each(result[0].parents, function(k,p) {
                         HTML.push('<tr>');
                         HTML.push('<td>'+ p.name + '</td>');
                         HTML.push('<td><input type="checkbox" name="parents[]" id="parents_' + p.id + '" class="ck_parents" value=' + p.id + '></td>');

@@ -3,46 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\GrandParents;
+use App\Models\GrandParent;
 
 class GrandParentsController extends Controller
 {
-    
+
     private $grandParents;
 
     public function __construct()
     {
 
         $parents = [];
-        $data = GrandParents::all();
+        $data = GrandParent::all();
 
         foreach($data as $k => $parent) {
 
-            $parents[] = ['id' => $parent->id, 'name'=> $parent->name]; 
-            
+            $parents[] = ['id' => $parent->id, 'name'=> $parent->name];
+
         }
 
         $this->grandParents = $parents;
 
     }
 
-    protected function getGrandParents()
+    protected function getGrandParent()
     {
         return $this->grandParents;
     }
 
-    protected function setGrandParents($value) 
+    protected function setGrandParent($value)
     {
         $this->grandParents[] = $value;
     }
 
     public function index()
     {
-        //$this->grandParents = \App\Models\GrandParents::all();
-        
-        $data = $this->getGrandParents();
-        
+
+        $data = $this->getGrandParent();
+
         return view('parents.grand-parents', compact('data'));
     }
-   
+
 }
