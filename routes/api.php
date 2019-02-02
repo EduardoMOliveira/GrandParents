@@ -8,3 +8,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/parentes/{grandparent_id?}', 'ParentController@getParent');
 
+Route::post('/filhos', 'SonParentController@getSon');
+

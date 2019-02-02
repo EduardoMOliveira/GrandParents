@@ -1,7 +1,7 @@
 $(function() {
 
     function getParent(grandparent) {
-       
+
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
@@ -31,9 +31,20 @@ $(function() {
         });
     }
 
-    function getSon(data) {
+    function getSon(sons) {
 
-        console.log(data);
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+            },
+            url: "/api/filhos",
+            type: "POST",
+            dataType: "json",
+            data: { message: sons},
+            success: function (result) {
+
+            }
+        });
 
     }
     function cbListAll() {
@@ -90,9 +101,10 @@ $(function() {
                     } else {
                         cbHide(chklistaAll[k], "true");
                         cbCheckedNew(true);
-                        getSon(chklista);
                     }
                 });
+
+                getSon(chklista);
             }
         });
     })
