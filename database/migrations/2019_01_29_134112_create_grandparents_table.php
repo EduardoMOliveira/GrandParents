@@ -9,7 +9,7 @@ class CreateGrandParentsTable extends Migration
 
     public function up()
     {
-        Schema::create('grand_parents', function (Blueprint $table) {
+        Schema::create('grandparents', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique()->nullable();
             $table->timestamps();
@@ -18,6 +18,6 @@ class CreateGrandParentsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('grand_parents');
+        Schema::dropIfExists('grandparents');
     }
 }

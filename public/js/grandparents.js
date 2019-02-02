@@ -1,12 +1,12 @@
 $(function() {
 
-    function getParents(grand_parents) {
-
+    function getParent(grandparent) {
+       
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
             },
-            url:'api/parents/' + grand_parents,
+            url:'/api/parentes/' + grandparent,
             type: 'post',
             dataType: 'json',
             success: function (result) {
@@ -70,10 +70,10 @@ $(function() {
     $(document).ready(function() {
         cbCheckedClick();
         $("#grandParents").change(function(){
-            var grand_parents = $(this).val();
+            var grandparent = $(this).val();
 
-            if(grand_parents != '') {
-                getParents(grand_parents);
+            if(grandparent != '') {
+                getParent(grandparent);
             } else {
                 $("#table_parents").hide();
             }

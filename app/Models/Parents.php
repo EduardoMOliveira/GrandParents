@@ -8,7 +8,7 @@ class Parents extends Model
 {
     protected $table = 'parents';
 
-    protected $fillable = ['name', 'grand_parent_id'];
+    protected $fillable = ['name', 'grandparent_id', 'son_parent_id'];
 
     public function grandParent()
     {
@@ -18,7 +18,7 @@ class Parents extends Model
     // Método responsável para relacionar a tabela pivó
     public function sonParents()
     {
-        return $this->belongsToMany(Parents::class, 'parent_x_son_parent', 'id', 'parent_id');
+        return $this->belongsToMany(Parents::class, 'parents_x_son_parents');
     }
 
 }

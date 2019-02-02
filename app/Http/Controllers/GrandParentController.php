@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\GrandParent;
 
-class GrandParentsController extends Controller
+class GrandParentController extends Controller
 {
 
-    private $grandParents;
+    private $grandParent;
 
     public function __construct()
     {
@@ -22,18 +22,18 @@ class GrandParentsController extends Controller
 
         }
 
-        $this->grandParents = $parents;
+        $this->grandParent = $parents;
 
     }
 
     protected function getGrandParent()
     {
-        return $this->grandParents;
+        return $this->grandParent;
     }
 
     protected function setGrandParent($value)
     {
-        $this->grandParents[] = $value;
+        $this->grandParent[] = $value;
     }
 
     public function index()
@@ -41,7 +41,7 @@ class GrandParentsController extends Controller
 
         $data = $this->getGrandParent();
 
-        return view('parents.grand-parents', compact('data'));
+        return view('parents.grandparent', compact('data'));
     }
 
 }

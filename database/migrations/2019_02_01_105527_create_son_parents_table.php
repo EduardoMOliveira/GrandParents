@@ -4,20 +4,22 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParentsTable extends Migration
+class CreateSonParentsTable extends Migration
 {
-
+   
     public function up()
     {
-        Schema::create('parents', function (Blueprint $table) {
+        Schema::create('son_parents', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('codigo');
             $table->string('name')->unique()->nullable();
+            $table->integer('age')->nullable();
             $table->timestamps();
         });
     }
-
+   
     public function down()
     {
-        Schema::dropIfExists('parents');
+        Schema::dropIfExists('son_parents');
     }
 }

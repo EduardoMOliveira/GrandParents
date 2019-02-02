@@ -9,6 +9,6 @@ $factory->define(App\Models\Parents::class, function (Faker $faker) {
 
     return [
         'name' => $faker->unique()->name,
-        'grand_parent_id' => $faker->randomElement($grand_parents)
+        'grandparent_id' => $faker->randomElement($grand_parents)
     ];
 });
