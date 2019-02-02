@@ -1,3 +1,4 @@
+
 $(function() {
 
     function getParent(grandparent) {
@@ -43,7 +44,21 @@ $(function() {
             dataType: "json",
             data: { message: sons},
             success: function (result) {
+                if (result.msg) {
+                    var HTML = new Array();
+                    $.each(result.msg, function(i,son){
 
+                        if (son.name) {
+                            HTML.push('<tr>');
+                            HTML.push('<td>' + son.name + '</td>');
+                            HTML.push('<td>' + son.age + '</td>');
+                            HTML.push('</tr>');
+                        }
+                    });
+
+                    $("#tab-son").append(HTML.join(''));
+                    $("#table_son").show();
+                }
             }
         });
 
@@ -68,6 +83,8 @@ $(function() {
     function cbCheckedClick() {
         $("#novo").change(function () {
             cbCheckedNew(false);
+            $("#tab-son tr").remove();
+            $("#table_son").hide();
             var chklistaAll = cbListAll();
             $.each(chklistaAll, function(k, v) {
                 $("#parents_" + chklistaAll[k]).prop("checked", false);
@@ -84,10 +101,14 @@ $(function() {
         $("#grandParents").change(function(){
             var grandparent = $(this).val();
 
+            $("#tab-son tr").remove();
+            $("#table_son").hide();
+
             if(grandparent != '') {
                 getParent(grandparent);
             } else {
                 $("#table_parents").hide();
+
             }
         });
 
@@ -98,7 +119,6 @@ $(function() {
                 $.each(chklistaAll, function(k, v) {
                     if (chklistaAll[k] == chklista[k]) {
                         cbHide(chklistaAll[k], "false");
-                        cbCheckedNew(false);
                     } else {
                         cbHide(chklistaAll[k], "true");
                         cbCheckedNew(true);

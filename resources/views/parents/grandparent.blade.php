@@ -45,10 +45,19 @@
                 <div class="col-md-3 table_parents">
                     <table class="table table-sm table-striped table-bordered table-hover" id="table_parents" style="display:none">
                         <thead>
-                            <th>Filhos</th>
+                            <th>Pais</th>
                             <th>Ação <input type="checkbox" name="novo" id="novo"/></th>
                         </thead>
                         <tbody id="tab-parents"></tbody>
+                    </table>
+                </div>
+                <div class="col-md-3 table_parents">
+                    <table class="table table-sm table-striped table-bordered table-hover" id="table_son" style="display:none">
+                        <thead>
+                            <th>Filhos</th>
+                            <th>Idade</th>
+                        </thead>
+                        <tbody id="tab-son"></tbody>
                     </table>
                 </div>
             </div>
