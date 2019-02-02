@@ -27,7 +27,7 @@ class SonParentController extends Controller
         //('sonParents')->where('son_parent_id', $son_parent_id)->get();
 
         $response = array(
-            'statusCode' => '201',
+            'statusCode' => '200',
             'msg' => $son,
         );
         return response()->json($response);

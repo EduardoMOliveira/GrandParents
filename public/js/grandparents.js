@@ -12,6 +12,7 @@ $(function() {
             success: function (result) {
 
                 $("#tab-parents tr").remove();
+                cbCheckedNew(false);
 
                 if(result) {
 
