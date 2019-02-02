@@ -15,9 +15,32 @@ $(function() {
                 $("#tab-parents tr").remove();
                 cbCheckedNew(false);
 
-                if(result) {
+                if (result) {
 
                     HTML = new Array();
+
+                    // $.each(result[0].parents, function (k, p) {
+
+                    //     var tr = document.createElement("tr");
+                    //     var td = document.createElement("td");
+                    //     var name = document.createTextNode(p.name);
+                    //     td.appendChild(name); //adiciona o nó de texto à nova td criada
+                    //     var input = document.createElement("input");
+                    //         input.type = "checkbox";
+                    //         input.name = "parents[]";
+                    //         input.id = "parents_" + p.id;
+                    //         input.value = p.id;
+                    //         input.className = "ck_parents"; // set the CSS class
+                    //     tr.appendChild(td);
+                    //     var td = document.createElement("td");
+                    //     td.appendChild(input); // put it into the DOM
+                    //     tr.appendChild(td);
+                    //     var tbody = document.getElementById("tab-parents");
+                    //     tbody.insertBefore(tr, tbody.childNodes[0]); // adiciona o novo elemento criado e seu conteúdo ao DOM
+
+                    // });
+
+                    // $("#table_parents").show();
 
                     $.each(result[0].parents, function(k,p) {
                         HTML.push('<tr>');

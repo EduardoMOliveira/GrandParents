@@ -1,31 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/grandparents.css') }}">
     <title>Meus Parentes</title>
-
-    <style>
-        #container {
-            margin-top: 50px;
-            text-align: center;
-        }
-        .table_parents {
-            margin-top: 20px;
-            margin-left: 10px;
-        }
-
-        #grandParents {
-            margin-top: 20px;
-            margin-left: 10px;
-        }
-
-    </style>
   </head>
   <body>
         {{ csrf_field() }}
@@ -43,7 +23,7 @@
                     </select>
                 </div>
                 <div class="col-md-3 table_parents">
-                    <table class="table table-sm table-striped table-bordered table-hover" id="table_parents" style="display:none">
+                    <table class="table table-sm table-striped table-bordered table-hover" id="table_parents">
                         <thead>
                             <th>Pais</th>
                             <th>Ação <input type="checkbox" name="novo" id="novo"/></th>
@@ -52,7 +32,7 @@
                     </table>
                 </div>
                 <div class="col-md-3 table_parents">
-                    <table class="table table-sm table-striped table-bordered table-hover" id="table_son" style="display:none">
+                    <table class="table table-sm table-striped table-bordered table-hover" id="table_son">
                         <thead>
                             <th>Filhos</th>
                             <th>Idade</th>

@@ -1,0 +1,20 @@
+#container {
+            margin-top: 50px;
+            text-align: center;
+        }
+.table_parents {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+#table_parents {
+    display:none;
+}
+
+#table_son {
+    display:none;
+}
+#grandParents {
+    margin-top: 20px;
+    margin-left: 10px;
+}
