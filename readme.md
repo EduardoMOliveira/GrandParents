@@ -14,6 +14,7 @@ Banco de dados grandparents
 Após clonar o projeto criar o copiar o .env_example para .env
 
 ## Contato
-emiranda.dev@gmail.com
+<address>
+emiranda.dev@gmail.com<br>
 telefone: 11 95851-0783
-.
+</address>
