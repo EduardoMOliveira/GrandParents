@@ -1,24 +1,17 @@
 
 
-## About Laravel
+## Desafio dos Parentes
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+Dado um grupo de avós, selecione dois irmãos desses avós, aonde a soma dos ids será a referência para encontrar o nome do filho e
+a soma dos ids dos pais será a idade do filho.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requisitos para instalar o projeto
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+MySQL instalar caso não tenha.
+No Laravel temos que alterar o .env ou app/config/database.php
+Banco de dados grandparents
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
-
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+Após clonar o projeto criar o copiar o .env_example para .env
 
 ## Laravel Sponsors
 
